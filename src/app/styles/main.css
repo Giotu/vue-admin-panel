@@ -1,0 +1,11 @@
+@import './base.css';
+
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-secondary: #e5e7eb;
+  --color-secondary-hover: #d1d5db;
+  --color-disabled: #d1d5db;
+  --color-disabled-text: #9ca3af;
+  --color-text: #374151;
+}
