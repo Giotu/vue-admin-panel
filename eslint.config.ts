@@ -21,4 +21,10 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
   skipFormatting,
+  {
+    rules: {
+      'vue/attributes-order': 'error',
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 )
