@@ -4,5 +4,6 @@ import Button from '@/ui/Button.vue'
 <template>
   <Button>Primary</Button>
   <Button type="secondary" size="lg">secondary</Button>
+  <Button type="info" size="sm">Info</Button>
   <Button is-disabled>disabled</Button>
 </template>

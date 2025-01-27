@@ -30,6 +30,7 @@ defineProps({
   font-weight: 600;
   transition: background-color 0.2s ease;
   text-transform: uppercase;
+  border: none;
 }
 
 .button:hover {
@@ -39,7 +40,6 @@ defineProps({
 .button--primary {
   background-color: var(--color-primary);
   color: white;
-  border: none;
 }
 
 .button--primary:hover {
@@ -49,11 +49,19 @@ defineProps({
 .button--secondary {
   background-color: var(--color-secondary);
   color: var(--color-text);
-  border: none;
 }
 
 .button--secondary:hover {
   background-color: var(--color-secondary-hover);
+}
+
+.button--info {
+  background-color: var(--color-info);
+  color: white;
+}
+
+.button--info:hover {
+  background-color: var(--color-info-hover);
 }
 
 .button--sm {
