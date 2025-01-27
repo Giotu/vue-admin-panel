@@ -1,18 +1,13 @@
 <script setup lang="ts">
-defineProps({
-  type: {
-    type: String,
-    default: 'primary',
-  },
-  isDisabled: {
-    type: Boolean,
-    default: false,
-  },
-  size: {
-    type: String,
-    default: 'md',
-  },
-})
+interface Props {
+  type?: 'primary' | 'secondary' | 'info';
+  isDisabled?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const props = defineProps<Props>();
+
+const { type = 'primary', isDisabled = false, size = 'md' } = props;
 </script>
 <template>
   <button
