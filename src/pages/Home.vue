@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Avatar from '@/components/ui/Avatar.vue';
 import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
 import Field from '@/components/ui/Field.vue';
@@ -32,5 +33,17 @@ const text = ref('');
         <Button type="info">more details</Button>
       </template>
     </Card>
+
+    <div style="display: flex; gap: 0.5rem">
+      <Avatar imageUrl="https://avatar.iran.liara.rds" alt="User 1" size="sm" />
+      <Avatar imageUrl="https://avatar.iran.liara.run/public" alt="User 2" size="md" />
+      <Avatar imageUrl="https://avatar.iran.liara.run/public" alt="User 3" size="lg" />
+
+      <Avatar placeholder="John Doe" size="sm" />
+      <Avatar placeholder="Jane Smith" size="md" />
+      <Avatar placeholder="Alex" size="lg" />
+
+      <Avatar shape="square" />
+    </div>
   </div>
 </template>
