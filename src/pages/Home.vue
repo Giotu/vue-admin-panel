@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Button from '@/components/ui/Button.vue';
+import Card from '@/components/ui/Card.vue';
 import Field from '@/components/ui/Field.vue';
 import { ref } from 'vue';
 
@@ -22,5 +23,14 @@ const text = ref('');
       :error="text.length < 8"
       error-message="Minimum 8 characters"
     />
+    <Card
+      title="Monkey"
+      description="Monkey selfie copyright dispute"
+      image-url="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Macaca_nigra_self-portrait_large.jpg/800px-Macaca_nigra_self-portrait_large.jpg"
+    >
+      <template #footer>
+        <Button type="info">more details</Button>
+      </template>
+    </Card>
   </div>
 </template>

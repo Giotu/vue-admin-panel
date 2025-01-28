@@ -11,4 +11,8 @@
   --color-disabled-text: #9ca3af;
   --color-text: #374151;
   --color-error: #ef4444;
+
+  --border-radius: 0.375rem;
+
+  --box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
 }
