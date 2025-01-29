@@ -5,9 +5,7 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const props = defineProps<Props>();
-
-const { type = 'primary', isDisabled = false, size = 'md' } = props;
+const { type = 'primary', isDisabled = false, size = 'md' } = defineProps<Props>();
 </script>
 <template>
   <button

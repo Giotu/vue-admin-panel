@@ -11,9 +11,13 @@ interface Props {
   textColor?: string;
 }
 
-const props = defineProps<Props>();
-
-const { imageUrl, alt = 'User avatar', size = 'md', placeholder = '', shape = 'round' } = props;
+const {
+  imageUrl,
+  alt = 'User avatar',
+  size = 'md',
+  placeholder = '',
+  shape = 'round',
+} = defineProps<Props>();
 
 const initials = computed(() => {
   if (!placeholder) return 'Me';
