@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 
 interface Props {
   imageUrl?: string;
@@ -7,6 +7,8 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
   placeholder?: string;
   shape?: 'round' | 'square';
+  bgColor?: string;
+  textColor?: string;
 }
 
 const props = defineProps<Props>();
@@ -15,13 +17,21 @@ const { imageUrl, alt = 'User avatar', size = 'md', placeholder = '', shape = 'r
 
 const initials = computed(() => {
   if (!placeholder) return 'Me';
-  const words = placeholder.trim().split(' ');
-  return words.length === 1
-    ? words[0][0]?.toUpperCase()
-    : (words[0][0] + words[1][0])?.toUpperCase();
+  const words = placeholder.trim().split(/\s+/);
+  return words
+    .slice(0, 2)
+    .map((word) => word[0]?.toUpperCase() ?? '')
+    .join('');
 });
 
 const isImageError = ref(false);
+
+watch(
+  () => imageUrl,
+  () => {
+    isImageError.value = false;
+  },
+);
 
 const handleImageError = () => {
   isImageError.value = true;
@@ -29,7 +39,11 @@ const handleImageError = () => {
 </script>
 
 <template>
-  <div class="avatar" :class="[`avatar_${size}`, `avatar_${shape}`]">
+  <div
+    class="avatar"
+    :class="[`avatar_${size}`, `avatar_${shape}`]"
+    :style="{ backgroundColor: bgColor, color: textColor }"
+  >
     <img
       v-if="imageUrl && !isImageError"
       :src="imageUrl"
@@ -37,7 +51,11 @@ const handleImageError = () => {
       class="avatar--image"
       @error="handleImageError"
     />
-    <span v-else class="avatar--placeholder">{{ initials }}</span>
+    <span v-else class="avatar--placeholder"
+      ><slot name="placeholder">
+        {{ initials }}
+      </slot></span
+    >
   </div>
 </template>
 
