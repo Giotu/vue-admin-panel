@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 interface Props {
   items: string[];
@@ -14,10 +14,18 @@ const emit = defineEmits<{
 const isOpen = ref(false);
 const dropdownRef = ref<HTMLElement | null>(null);
 
-document.addEventListener('click', (event) => {
+const clickOutsideHandler = (event: MouseEvent) => {
   if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
     isOpen.value = false;
   }
+};
+
+onMounted(() => {
+  document.addEventListener('click', clickOutsideHandler);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', clickOutsideHandler);
 });
 
 function clickHandler(item: string) {
