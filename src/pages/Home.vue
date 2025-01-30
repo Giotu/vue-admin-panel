@@ -3,12 +3,14 @@ import Avatar from '@/components/ui/Avatar.vue';
 import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
 import Checkbox from '@/components/ui/Checkbox.vue';
+import RadioButton from '@/components/ui/RadioButton.vue';
 import Field from '@/components/ui/Field.vue';
 import { ref } from 'vue';
 
 const text = ref('');
 const checked = ref(false);
 const group = ref([]);
+const radio = ref('');
 </script>
 
 <template>
@@ -49,11 +51,16 @@ const group = ref([]);
 
     <Avatar bg-color="#4a5568" text-color="#cbd5e0" placeholder="Alexey" shape="square" />
 
-    <Checkbox id="1" v-model="checked" label="Checkbox" name="checkbox" value="1" />
+    <Checkbox v-model="checked" label="Checkbox" name="checkbox" value="1" />
     {{ checked }}
 
-    <Checkbox id="opt1" v-model="group" value="option1" label="Option 1" name="group" />
-    <Checkbox id="opt2" v-model="group" value="option2" label="Option 2" name="group" />
+    <Checkbox v-model="group" value="option1" label="Option 1" name="group" />
+    <Checkbox v-model="group" value="option2" label="Option 2" name="group" />
     {{ group }}
+
+    <RadioButton id="1" v-model="radio" label="Radio 1" name="radio" value="1" size="lg" />
+    <RadioButton id="2" v-model="radio" label="Radio 2" name="radio" value="2" />
+    <RadioButton id="3" v-model="radio" label="Radio 3" name="radio" value="3" size="sm" disabled />
+    {{ radio }}
   </div>
 </template>
