@@ -47,71 +47,73 @@ const isChecked = computed({
   </label>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .checkbox {
   display: flex;
   align-items: center;
   cursor: pointer;
   gap: 0.5rem;
   font-size: 1rem;
-  color: var(--color-text, #333);
-}
+  color: $color-text;
 
-.checkbox--input {
-  display: none;
-}
+  &--box {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid $color-border;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+  }
 
-.checkbox--box {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 2px solid var(--color-border, #ccc);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  background-color: white;
-}
+  &--input {
+    display: none;
 
-.checkbox--input:checked + .checkbox--box {
-  background-color: var(--color-primary, #007bff);
-  border-color: var(--color-primary, #007bff);
-}
+    &:checked + .checkbox--box {
+      background-color: $color-primary;
+      border-color: $color-primary;
 
-.checkbox--input:checked + .checkbox--box::after {
-  content: '';
-  width: 12px;
-  height: 8px;
-  background: currentColor;
-  mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' d='M1 4l3.5 3L11 1'/%3E%3C/svg%3E");
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-}
+      &::after {
+        content: '';
+        width: 12px;
+        height: 8px;
+        background: currentColor;
+        mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' d='M1 4l3.5 3L11 1'/%3E%3C/svg%3E");
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
 
-.checkbox_sm {
-  font-size: 0.875rem;
-}
-.checkbox_sm .checkbox--box {
-  width: 1rem;
-  height: 1rem;
-}
+    &:disabled + .checkbox--box {
+      background-color: $color-disabled-bg;
+      border-color: $color-disabled-border;
+    }
+  }
 
-.checkbox_lg {
-  font-size: 1.125rem;
-}
-.checkbox_lg .checkbox--box {
-  width: 1.5rem;
-  height: 1.5rem;
+  &_sm {
+    font-size: 0.875rem;
+
+    .checkbox--box {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &lg {
+    font-size: 1.125rem;
+
+    .checkbox--box {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 }
 
 .is-disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.checkbox--input:disabled + .checkbox--box {
-  background-color: var(--color-disabled-bg);
-  border-color: var(--color-disabled-border);
 }
 </style>

@@ -63,49 +63,49 @@ const handleImageError = () => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .avatar {
   overflow: hidden;
-  background-color: var(--color-primary);
+  background-color: $color-primary;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
   user-select: none;
-}
 
-.avatar_sm {
-  width: 2rem;
-  height: 2rem;
-  font-size: 0.875rem;
-}
+  &_sm {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
 
-.avatar_md {
-  width: 3rem;
-  height: 3rem;
-  font-size: 1rem;
-}
+  &_md {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
 
-.avatar_lg {
-  width: 4rem;
-  height: 4rem;
-  font-size: 1.25rem;
-}
+  &_lg {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.25rem;
+  }
 
-.avatar_round {
-  border-radius: 50%;
-}
+  &_round {
+    border-radius: 50%;
+  }
 
-.avatar--image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  &--image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-.avatar--placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  &--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

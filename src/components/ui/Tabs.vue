@@ -29,32 +29,32 @@ const emit = defineEmits<{
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .tab-nav {
   display: flex;
   gap: 0.5rem;
-}
 
-.tab-nav--item {
-  padding: 1rem;
-  border: 1px solid var(--color-primary);
-  cursor: pointer;
-  transition: all 0.3s;
-}
+  &--item {
+    padding: 1rem;
+    border: 1px solid $color-primary;
+    cursor: pointer;
+    transition: all 0.3s;
 
-.tab-nav--item:hover {
-  background-color: var(--color-primary-hover);
-  color: white;
-}
+    &:hover {
+      background-color: $color-primary-hover;
+      color: white;
+    }
 
-.tab-nav--item_active {
-  background-color: var(--color-primary);
-  color: white;
+    &_active {
+      background-color: $color-primary;
+      color: white;
+    }
+  }
 }
 
 .tab-content {
   padding: 1rem;
-  border: 1px solid var(--color-secondary);
+  border: 1px solid $color-secondary;
   border-radius: 0 0 6px 6px;
 }
 </style>

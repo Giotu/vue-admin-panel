@@ -31,68 +31,70 @@ const model = defineModel<string | number | boolean>();
   </label>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .radio {
   display: flex;
   align-items: center;
   cursor: pointer;
   gap: 0.5rem;
   font-size: 1rem;
-  color: var(--color-text, #333);
-}
+  color: $color-text;
 
-.radio--input {
-  display: none;
-}
+  &--input {
+    display: none;
 
-.radio--circle {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 2px solid var(--color-border, #ccc);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  background-color: white;
-}
+    &:checked + .radio--circle {
+      border-color: $color-primary;
+      background-color: $color-primary;
 
-.radio--input:checked + .radio--circle {
-  border-color: var(--color-primary, #007bff);
-  background-color: var(--color-primary, #007bff);
-}
+      &::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+      }
+    }
 
-.radio--input:checked + .radio--circle::after {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-}
+    &:disabled + .radio--circle {
+      background-color: $color-disabled-bg;
+      border-color: $color-disabled-border;
+    }
+  }
 
-.radio_sm {
-  font-size: 0.875rem;
-}
-.radio_sm .radio--circle {
-  width: 1rem;
-  height: 1rem;
-}
+  &--circle {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid $color-border;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+  }
 
-.radio_lg {
-  font-size: 1.125rem;
-}
-.radio_lg .radio--circle {
-  width: 1.5rem;
-  height: 1.5rem;
+  &_sm {
+    font-size: 0.875rem;
+
+    .radio--circle {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &_lg {
+    font-size: 1.125rem;
+
+    .radio--circle {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 }
 
 .is-disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.radio--input:disabled + .radio--circle {
-  background-color: var(--color-disabled-bg);
-  border-color: var(--color-disabled-border);
 }
 </style>

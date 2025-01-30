@@ -21,7 +21,7 @@ const isVisible = ref(false);
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .tooltip-container {
   position: relative;
   display: inline-block;

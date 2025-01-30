@@ -41,42 +41,41 @@ function clickHandler(item: string) {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .dropdown {
   position: relative;
   display: inline-block;
-}
 
-.dropdown-trigger {
-  background: var(--color-primary);
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer;
-}
+  &-trigger {
+    background: $color-primary;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+  }
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  border: 1px solid var(--color-secondary);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  min-width: 150px;
-  list-style: none;
-  padding: 0;
-  margin-top: 5px;
-}
+  &-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid $color-secondary;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    min-width: 150px;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+  }
+  &-item {
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
 
-.dropdown-item {
-  padding: 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.dropdown-item:hover {
-  background: var(--color-secondary);
+    &:hover {
+      background: $color-secondary;
+    }
+  }
 }
 
 .fade-enter-active,

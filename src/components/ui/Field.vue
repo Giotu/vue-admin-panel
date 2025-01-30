@@ -36,78 +36,77 @@ const model = defineModel();
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .field {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-}
 
-.field--label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-text);
-}
+  &--label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $color-text;
+  }
 
-.field--container {
-  border: 1px solid var(--color-secondary);
-  border-radius: 0.375rem;
-  transition: border-color 0.2s ease;
-  background: white;
-}
+  &--container {
+    border: 1px solid $color-secondary;
+    border-radius: 0.375rem;
+    transition: border-color 0.2s ease;
+    background: white;
 
-.field--container:focus-within {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
-}
+    &:focus-within {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+    }
+  }
 
-.field--input {
-  width: 100%;
-  border: none;
-  outline: none;
-  color: var(--color-text);
-  background: transparent;
-  caret-color: var(--color-primary);
-}
+  &--input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: $color-text;
+    background: transparent;
+    caret-color: $color-primary;
 
-.field--input_lg {
-  font-size: 1rem;
-  padding: 0.75rem;
-}
+    &::placeholder {
+      color: $color-text;
+      opacity: 0.7;
+    }
 
-.field--input_md {
-  font-size: 0.875rem;
-  padding: 0.5rem;
-}
+    &_md {
+      font-size: 0.875rem;
+      padding: 0.5rem;
+    }
 
-.field--input::placeholder {
-  color: var(--color-text);
-  opacity: 0.7;
-}
+    &_lg {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+  }
 
-.field--error {
-  border-color: var(--color-error);
-}
+  &--error {
+    border-color: $color-error;
 
-.field--error:focus-within {
-  border-color: var(--color-error);
-  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
+    &:focus-within {
+      border-color: $color-error;
+      box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1);
+    }
+  }
 }
 
 .error-message {
-  color: var(--color-error);
+  color: $color-error;
   font-size: 0.75rem;
   margin-top: 0.25rem;
 }
 
 .field--disabled {
-  border-color: var(--color-disabled);
-  background: var(--color-disabled);
-  cursor: not-allowed;
-}
+  border-color: $color-disabled;
+  background: $color-disabled;
 
-.field--disabled .field--input {
-  cursor: not-allowed;
+  .field--input {
+    cursor: not-allowed;
+  }
 }
 </style>
