@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useId } from '@/composables/useId';
+
+const id = useId('checkbox');
 interface Props {
-  id: string;
   name: string;
   label: string;
   value: string;
@@ -38,6 +40,7 @@ const isChecked = computed({
       :name="name"
       class="checkbox--input"
       :disabled="disabled"
+      :value="value"
     />
     <span class="checkbox--box"></span>
     {{ label }}
