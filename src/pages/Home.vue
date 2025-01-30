@@ -7,6 +7,7 @@ import RadioButton from '@/components/ui/RadioButton.vue';
 import Field from '@/components/ui/Field.vue';
 import Tabs from '@/components/ui/Tabs.vue';
 import Tooltip from '@/components/ui/Tooltip.vue';
+import Dropdown from '@/components/ui/Dropdown.vue';
 import { ref } from 'vue';
 
 const text = ref('');
@@ -58,6 +59,8 @@ const selectedTab = ref('tab1');
     <Avatar shape="square" />
 
     <Avatar bg-color="#4a5568" text-color="#cbd5e0" placeholder="Alexey" shape="square" />
+
+    <Dropdown :items="['Item 1', 'Item 2', 'Item 3']" @select="console.log($event)" />
 
     <Checkbox v-model="checked" label="Checkbox" name="checkbox" value="1" />
     {{ checked }}
