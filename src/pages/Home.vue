@@ -8,6 +8,7 @@ import Field from '@/components/ui/Field.vue';
 import Tabs from '@/components/ui/Tabs.vue';
 import Tooltip from '@/components/ui/Tooltip.vue';
 import Dropdown from '@/components/ui/Dropdown.vue';
+import Modal from '@/components/ui/Modal.vue';
 import { ref } from 'vue';
 
 const text = ref('');
@@ -20,6 +21,7 @@ const tabs = ref([
 ]);
 
 const selectedTab = ref('tab1');
+const modalOpen = ref(false);
 </script>
 
 <template>
@@ -92,5 +94,7 @@ const selectedTab = ref('tab1');
       </Tooltip>
       dolor sit amet consectetur adipisicing elit. At, nulla. Sed illum similique vitae asperiores!
     </span>
+
+    <Modal v-model="modalOpen" title="Modal title" />
   </div>
 </template>
