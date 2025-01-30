@@ -6,6 +6,7 @@ import Checkbox from '@/components/ui/Checkbox.vue';
 import RadioButton from '@/components/ui/RadioButton.vue';
 import Field from '@/components/ui/Field.vue';
 import Tabs from '@/components/ui/Tabs.vue';
+import Tooltip from '@/components/ui/Tooltip.vue';
 import { ref } from 'vue';
 
 const text = ref('');
@@ -79,5 +80,14 @@ const selectedTab = ref('tab1');
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, delectus?
       </div>
     </Tabs>
+
+    <span>
+      <Tooltip
+        text="Lorem ipsum is a dummy or placeholder text commonly used in graphic design,
+        publishing, and web development to fill empty spaces in a layout that does not yet have content."
+        >Lorem, ipsum
+      </Tooltip>
+      dolor sit amet consectetur adipisicing elit. At, nulla. Sed illum similique vitae asperiores!
+    </span>
   </div>
 </template>
