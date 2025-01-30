@@ -5,12 +5,19 @@ import Card from '@/components/ui/Card.vue';
 import Checkbox from '@/components/ui/Checkbox.vue';
 import RadioButton from '@/components/ui/RadioButton.vue';
 import Field from '@/components/ui/Field.vue';
+import Tabs from '@/components/ui/Tabs.vue';
 import { ref } from 'vue';
 
 const text = ref('');
 const checked = ref(false);
 const group = ref([]);
 const radio = ref('');
+const tabs = ref([
+  { name: 'tab1', label: 'Tab 1' },
+  { name: 'tab2', label: 'Tab 2' },
+]);
+
+const selectedTab = ref('tab1');
 </script>
 
 <template>
@@ -62,5 +69,15 @@ const radio = ref('');
     <RadioButton id="2" v-model="radio" label="Radio 2" name="radio" value="2" />
     <RadioButton id="3" v-model="radio" label="Radio 3" name="radio" value="3" size="sm" disabled />
     {{ radio }}
+
+    <Tabs :tabs="tabs" :selected-tab="selectedTab" @update-tab="selectedTab = $event">
+      <div v-if="selectedTab === 'tab1'">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis voluptates ab ad omnis velit
+        molestias. Distinctio possimus et nisi ex?
+      </div>
+      <div v-if="selectedTab === 'tab2'">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, delectus?
+      </div>
+    </Tabs>
   </div>
 </template>
