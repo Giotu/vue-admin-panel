@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Button from './Button.vue';
 interface Props {
   modelValue: boolean;
   title: string;
@@ -23,7 +22,7 @@ function closeModal() {
           <slot name="header">
             <h3>{{ title }}</h3>
           </slot>
-          <Button size="sm" @click="closeModal">x</Button>
+          <button @click="closeModal">x</button>
         </div>
         <div class="modal-body">
           <slot></slot>
