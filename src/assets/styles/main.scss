@@ -1,2 +1,2 @@
-@import './base.scss';
-@import './variables.scss';
+@use './base.scss' as *;
+@use './variables.scss' as *;

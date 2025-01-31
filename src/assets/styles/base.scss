@@ -4,3 +4,17 @@
   box-sizing: border-box;
   font-family: 'Roboto', serif;
 }
+
+body,
+html,
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
