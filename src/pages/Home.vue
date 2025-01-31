@@ -10,6 +10,7 @@ import {
   UTooltip,
   UModal,
   UDropdown,
+  ULink,
 } from '@/components';
 
 import { ref } from 'vue';
@@ -107,5 +108,6 @@ const modalOpen = ref(false);
     </span>
 
     <UModal v-model="modalOpen" title="Modal title" />
+    <ULink type="secondary">Open modal</ULink>
   </div>
 </template>

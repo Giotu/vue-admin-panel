@@ -8,6 +8,7 @@ import UDropdown from './UDropdown/UDropdown.vue';
 import URadioButton from './URadioButton/URadioButton.vue';
 import UModal from './UModal/UModal.vue';
 import UTooltip from './UTooltip/UTooltip.vue';
+import ULink from './ULink/ULink.vue';
 
 export {
   UTabs,
@@ -20,4 +21,5 @@ export {
   URadioButton,
   UModal,
   UTooltip,
+  ULink,
 };
